@@ -7,7 +7,7 @@ describe('CheeseList.jsx', () => {
   it('checks for loading and rendering detail of selected cheese', async () => {
     render(
       <MemoryRouter
-      initialEntries={["/cheeses/4"]}
+      initialEntries={["/4"]}
       >
         <App />
       </MemoryRouter>
@@ -16,7 +16,7 @@ describe('CheeseList.jsx', () => {
     await waitForElementToBeRemoved(screen.getByText(/loading/i));
 
     const name = await screen.findByText('Brie');
-    
+    expect(name).toBeInTheDocument();
   });
 
 });
