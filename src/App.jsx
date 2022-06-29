@@ -1,3 +1,14 @@
+import { Route, Switch } from 'react-router-dom';
+import CheeseList from './views/CheeseList';
+
 export default function App() {
-  return <h1>Hello World</h1>;
+  return (
+    <>
+      <Switch>
+        <Route path="/">
+          <CheeseList />
+        </Route>
+      </Switch>
+    </>
+  );
 }
