@@ -13,7 +13,7 @@ describe('CheeseList.jsx', () => {
     screen.getByText(/loading/i);
     const heading = await screen.findByText('Welcome to Cheese Chomp');
     expect(heading).toBeInTheDocument();
-    const cheeses = await screen.findByRole('link');
+    const cheeses = await screen.findAllByRole('heading', {level: 2});
     expect(cheeses.length).toEqual(15);
     const american = await screen.findByText('American');
     expect(american).toBeInTheDocument();
