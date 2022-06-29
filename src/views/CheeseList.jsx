@@ -7,17 +7,16 @@ export default function CheeseList() {
   const [cheeses, setCheeses] = useState([]);
   const [error, setError] = useState('');
   useEffect(() => {
-    const fetchData = async () => {
-      try {
+    try {
+      const fetchData = async () => {
         const data = await fetchCheeses();
-        console.log('fetchcheese', data);
         setCheeses(data);
         setLoading(false);
+      };
+      fetchData();
       } catch (e) {
         setError(e);
       }
-    };
-    fetchData();
   }, []);
 
   if (loading) return <p>Loading...</p>;
