@@ -10,6 +10,7 @@ export default function CheeseList() {
     const fetchData = async () => {
       try {
         const data = await fetchCheeses();
+        console.log('fetchcheese', data);
         setCheeses(data);
         setLoading(false);
       } catch (e) {

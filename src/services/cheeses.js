@@ -4,4 +4,3 @@ export async function fetchCheeses() {
   const resp = await data.json();
   return resp;
 }
-fetchCheeses();
