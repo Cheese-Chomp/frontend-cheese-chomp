@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import CheeseCard from '../components/CheeseCard';
-import { fetchCheeses } from '../services/cheeses';
+import CheeseCard from '../../components/CheeseCard';
+import { fetchCheeses } from '../../services/cheeses';
 
 export default function CheeseList() {
   const [loading, setLoading] = useState(true);

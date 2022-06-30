@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { fetchCheeseById } from '../services/cheeses';
-import CheeseDetailCard from '../components/CheeseDetailCard';
+import { fetchCheeseById } from '../../services/cheeses';
+import CheeseDetailCard from '../../components/CheeseDetailCard';
 
 export default function CheeseDetail() {
     const [cheese, setCheese] = useState({});
