@@ -17,6 +17,18 @@ describe('CheeseList.jsx', () => {
 
     const name = await screen.findByText('Brie');
     expect(name).toBeInTheDocument();
+
+    const image = await screen.findByAltText('Brie');
+    expect(image).toBeInTheDocument();
+
+    const description = await screen.findByText(/brie is a soft/i);
+    expect(description).toBeInTheDocument();
+
+    const pairs = await screen.findByText(/turkey/i);
+    expect(pairs).toBeInTheDocument();
+
+    const smells = await screen.findByText(/it do not smell/i);
+    expect(smells).toBeInTheDocument();
   });
 
 });
