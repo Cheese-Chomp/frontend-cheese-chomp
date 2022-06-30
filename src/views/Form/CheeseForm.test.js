@@ -12,8 +12,14 @@ describe('CheeseForm.jsx', () => {
       </MemoryRouter>
     );
 
-    // await waitForElementToBeRemoved(/loading/i);
-    // const button = screen.getElementByRole('button');
-    // expect(button).toBeInTheDocument();
+    const button = screen.getByRole('button');
+    expect(button).toBeInTheDocument();
+
+    const fields = screen.getAllByRole('textbox');
+    expect(fields.length).toEqual(4);
+
+    const radios = screen.getAllByRole('radio');
+    expect(radios.length).toEqual(2);
+
   });
 });

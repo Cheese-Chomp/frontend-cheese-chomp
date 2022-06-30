@@ -7,11 +7,11 @@ export default function App() {
   return (
     <>
       <Switch>
-        <Route path="/:id">
-          <CheeseDetail />
-        </Route>
-        <Route path="/new">
+        <Route exact path="/new">
           <CheeseForm />
+        </Route>
+        <Route exact path="/:id">
+          <CheeseDetail />
         </Route>
         <Route path="/">
           <CheeseList />
