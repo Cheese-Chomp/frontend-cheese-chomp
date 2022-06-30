@@ -1,14 +1,15 @@
 import { MemoryRouter } from 'react-router-dom';
-import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
+import {
+  render,
+  screen,
+  waitForElementToBeRemoved,
+} from '@testing-library/react';
 import App from '../../App';
-
 
 describe('CheeseList.jsx', () => {
   it('checks for loading and rendering detail of selected cheese', async () => {
     render(
-      <MemoryRouter
-        initialEntries={["/4"]}
-      >
+      <MemoryRouter initialEntries={['/4']}>
         <App />
       </MemoryRouter>
     );
@@ -29,6 +30,8 @@ describe('CheeseList.jsx', () => {
 
     const smells = await screen.findByText(/it do not smell/i);
     expect(smells).toBeInTheDocument();
-  });
 
+    const buttons = await screen.findAllByRole('button');
+    expect(buttons.length).toEqual(2);
+  });
 });
