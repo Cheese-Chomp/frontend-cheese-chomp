@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { sendCheese } from '../../services/cheeses';
 
 export default function CheeseForm() {
   const [name, setName] = useState('');
@@ -7,9 +8,17 @@ export default function CheeseForm() {
   const [pairs, setPairs] = useState('');
   const [smells, setSmells] = useState(false);
 
-  function handleForm(e) {
+  const handleForm = async (e) => {
     e.preventDefault();
-  }
+    const newCheese = {
+      name,
+      description,
+      url: link,
+      pairs,
+      smells,
+    };
+    const submitCheese = await sendCheese(newCheese);
+  };
 
   return (
     <div>

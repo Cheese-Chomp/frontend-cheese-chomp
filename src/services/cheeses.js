@@ -9,3 +9,16 @@ export async function fetchCheeseById(id) {
   const resp = await data.json();
   return resp;
 }
+
+export async function sendCheese(cheese) {
+  const reqOptions = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'include',
+    mode: 'cors',
+    body: JSON.stringify({ ...cheese })
+  };
+  const data = await fetch(`${process.env.BACKEND_URL}/api/v1/cheeses`, reqOptions);
+  const resp = await data.json();
+  return resp;
+}

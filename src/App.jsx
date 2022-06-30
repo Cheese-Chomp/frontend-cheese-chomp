@@ -13,7 +13,7 @@ export default function App() {
         <Route exact path="/:id">
           <CheeseDetail />
         </Route>
-        <Route path="/">
+        <Route exact path="/">
           <CheeseList />
         </Route>
       </Switch>
