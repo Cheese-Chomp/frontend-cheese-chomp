@@ -1,5 +1,7 @@
 export async function fetchCheeses() {
-  const data = await fetch(`${process.env.BACKEND_URL}/api/v1/cheeses`);
+  const url = new URL('/api/v1/cheeses', process.env.BACKEND_URL);
+  const data = await fetch(url);
+  // const data = await fetch(`${process.env.BACKEND_URL}/api/v1/cheeses`);
   const resp = await data.json();
   return resp;
 }
